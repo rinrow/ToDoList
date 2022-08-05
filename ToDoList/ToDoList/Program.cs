@@ -19,8 +19,6 @@ namespace ToDoList
             var model = new ListModel();
             var form = new ListForm(model);
             Application.Run(form);
-            System.Threading.Thread.Sleep(10);
-            form.Init(model);
         }
     }
 }

@@ -200,9 +200,10 @@ namespace ToDoList
 
             _tasksBox.SelectedIndexChanged += (sender, args) =>
             {
+                if (_tasksBox.SelectedItem == null)
+                    return;
                 removeButton.Enabled = true;
-                if (!_model.IsDone(_tasksBox.SelectedItem.ToString()))
-                    markAsDoneButton.Enabled = true;
+                markAsDoneButton.Enabled = !_model.IsDone(_tasksBox.SelectedItem.ToString());
             };
             #endregion
         }
