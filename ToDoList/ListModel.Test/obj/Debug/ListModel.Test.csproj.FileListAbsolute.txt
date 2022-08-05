@@ -1,0 +1,17 @@
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\ListModel.Test.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\ListModel.Test.pdb
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\ToDoList.exe
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\ToDoList.pdb
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\ToDoList.exe.config
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\obj\Debug\ListModel.Test.csproj.AssemblyReference.cache
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\obj\Debug\ListModel.Test.csproj.CoreCompileInputs.cache
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\obj\Debug\ListModel.Test.csproj.CopyComplete
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\obj\Debug\ListModel.Test.dll
+C:\Users\Teacher\source\repos\ToDoList\ListModel.Test\obj\Debug\ListModel.Test.pdb
