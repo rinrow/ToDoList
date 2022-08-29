@@ -12,9 +12,11 @@ namespace ToDoList
         private string _name;
 
         public override List<ToDoComposite> Childs => _childs;
-
+        public override bool HasChild => true;
         public override int Count => _childs.Count;
-        
+
+        public event Action<ToDoComposite> ChildAdded;
+
         public Target(string name)
         {
             _childs = new List<ToDoComposite>();
@@ -50,6 +52,7 @@ namespace ToDoList
         public override void Add(ToDoComposite child)
         {
             _childs.Add(child);
+            ChildAdded?.Invoke(child);
         }
 
         public override void Insert(int index, ToDoComposite child)

@@ -8,31 +8,32 @@ namespace ToDoList
 {
     public class ListModel
     {
-        private ToDoComposite _currentTarget;
+        private Target _currentTarget;
         private Stack<ICommand> _taskCommands;
         private Stack<ICommand> _enterToTargetCommands;
+        private ListStrategy _listStrategy = new CachedListStrategy();
 
-        public ToDoComposite CurrentTarget { get => _currentTarget; set => _currentTarget = value; }
+        public Target CurrentTarget
+        {
+            get => _currentTarget;
+            set
+            {
+                _currentTarget = value;
+                _listStrategy.SetCurrentTarget(_currentTarget);
+            }
+        }
 
         public bool CanUndo => _taskCommands.Count > 0;
         public bool CanReturnToPrevious => _enterToTargetCommands.Count > 0;
-            
-        //Подумать над опитмизацией
-        public List<string> CurrentTasks => _currentTarget.Childs
-            .Where(a => a.Count == -1)
-            .Select(a => a.GetValue())
-            .ToList();
 
-        public List<string> CurrentTargets => _currentTarget.Childs
-            .Where(a => a.Count >= 0)
-            .Select(a => a.GetValue())
-            .ToList();
+        public List<string> CurrentTasks => _listStrategy.GetTasks();
+        public List<string> CurrentTargets => _listStrategy.GetTargets();
 
         public event Action Changed;
 
         public ListModel()
         {
-            _currentTarget = new Target("Найти счастье");
+            CurrentTarget = new Target("Найти счастье");
             _taskCommands = new Stack<ICommand>();
             _enterToTargetCommands = new Stack<ICommand>();
         }
@@ -54,19 +55,22 @@ namespace ToDoList
 
         public void AddTarget(string targetName)
         {
-            _currentTarget.Add(new Target(targetName));
+            //if (CurrentTarget != null)
+                CurrentTarget.Add(new Target(targetName));
+            //else
+            //    CurrentTarget = new Target(targetName);
             Changed?.Invoke();
         }
 
         public void AddTask(string text)
         {
-            _currentTarget.Add(new Task(text));
+            CurrentTarget.Add(new Task(text));
             Changed?.Invoke();
         }
 
         public void AddTask(int index, string text)
         {
-            _currentTarget.Insert(index, new Task(text));
+            CurrentTarget.Insert(index, new Task(text));
             Changed?.Invoke();
         }
 
@@ -87,7 +91,7 @@ namespace ToDoList
 
         public void MarkAsDone(string targetValue)
         {
-            var result  = _currentTarget.Childs
+            var result = _currentTarget.Childs
                 .Where(a => a.GetValue() == targetValue)
                 .FirstOrDefault();
             if (result == null)

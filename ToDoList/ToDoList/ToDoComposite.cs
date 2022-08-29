@@ -14,6 +14,7 @@ namespace ToDoList
 
         public virtual int Count  => -1;
         public virtual List<ToDoComposite> Childs=> throw new NotImplementedException();
+        public virtual bool HasChild => false;
 
         //Visitor
         public abstract void Accept(ToDoVisitor visitor);

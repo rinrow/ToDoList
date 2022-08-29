@@ -55,8 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CachedListStrategy.cs" />
     <Compile Include="DoneCountVisistor.cs" />
+    <Compile Include="ListStrategy.cs" />
     <Compile Include="NullIterator.cs" />
+    <Compile Include="SimpleListStrategy.cs" />
     <Compile Include="TargetIterator.cs" />
     <Compile Include="OpenTargetCommand.cs" />
     <Compile Include="Command.cs" />

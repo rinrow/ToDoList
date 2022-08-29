@@ -10,7 +10,7 @@ namespace ToDoList
     {
         private ListModel _model;
         private string _targetToOpenName;
-        private ToDoComposite _previousTarget;
+        private Target _previousTarget;
 
         public OpenTargetCommand(ListModel model, string targetToOpenName)
         {
@@ -20,14 +20,15 @@ namespace ToDoList
 
         public void Execute()
         {
-            //Возможный баi что имся задачи и имя уели одинаковые 
             var target = _model.CurrentTarget.Childs
                 .Where(a => a.GetValue() == _targetToOpenName && a.Count >= 0)
                 .FirstOrDefault();
+
             if (target == null)
                 throw new IndexOutOfRangeException();
             _previousTarget = _model.CurrentTarget;
-            _model.CurrentTarget = target;
+            //Плохая реализация as Target(зацепка на оссобенностях яп
+            _model.CurrentTarget = target as Target;
         }
 
         public void Undo()

@@ -184,7 +184,7 @@ namespace ToDoList
                     _model.ReturnToPreviousTarget();
             };
 
-            int lastIndex = default;
+            int lastIndex = -2;
             _targetsBox.SelectedIndexChanged += (sender, args) =>
             {
                 if (lastIndex == _targetsBox.SelectedIndex && _targetsBox.SelectedItem != null)
